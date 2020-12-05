@@ -5,7 +5,7 @@ import RPi.GPIO as GPIO
 from MCP3008 import MCP3008
 from NTC10kOhm import NTC10kOhm
 
-gpio=[17,27,22]
+gpio=[23,24,25]
 
 #filenamehead=""
 filenamehead="ntc10kOhm"
@@ -39,7 +39,7 @@ if __name__ == "__main__":
 
 		for channel in range(0,8):
 		    
-		    time.sleep(0.1)
+#		    time.sleep(0.1)
 		    GPIO.output(i,GPIO.LOW)
 		    adc.open()
 		    value = adc.read(channel)

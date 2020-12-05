@@ -19,8 +19,8 @@ if __name__ == "__main__":
 
     ntc=NTC10kOhm()
 #    adcs=[MCP3008(bus=0, device=0)]
-    adcs=[MCP3008(bus=1, device=0),MCP3008(bus=1, device=1), MCP3008(bus=1, device=2)]
-#   adcs=[MCP3008(bus=0, device=0), MCP3008(bus=0, device=1)]
+#    adcs=[MCP3008(bus=1, device=0),MCP3008(bus=1, device=1), MCP3008(bus=1, device=2)]
+    adcs=[MCP3008(bus=0, device=0), MCP3008(bus=0, device=1)]
 
     try:
 	while True:
@@ -32,9 +32,7 @@ if __name__ == "__main__":
 		for channel in range(0,8):
 #		    time.sleep(0.2)
 #		    adc.open()
-#		    time.sleep(0.2)
 		    value = adc.read(channel)
-#		    time.sleep(0.2)
 #		    adc.close()
 
 		    V=ntc.VoltageCal(value)
